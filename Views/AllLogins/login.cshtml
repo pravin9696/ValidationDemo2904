@@ -1,0 +1,46 @@
+﻿@model ValidationDemo2904.Models.classLoginModel
+@{
+    ViewBag.Title = "login";
+}
+
+
+<h2>login</h2>
+<h4 style="color:red">@ViewBag.msg</h4>
+@using (Html.BeginForm())
+{
+<table>
+	<tr>
+		<td>@Html.LabelFor(x=>x.userid)
+		</td>
+		<td>
+			@Html.TextBoxFor(x=>x.userid)
+		</td>
+		<td>
+			@Html.ValidationMessageFor(x=>x.userid)
+		</td>
+	</tr>
+	<tr>
+		<td>
+			@Html.LabelFor(x => x.password)
+	</td>
+	<td>
+		@Html.TextBoxFor(x => x.password)
+	</td>
+	<td>
+		@Html.ValidationMessageFor(x => x.password)
+	</td>
+	</tr>
+	<tr>
+		<td>
+			<input type="submit" value="submit" />
+		</td>
+		<td>
+			<input type="reset" value="Reset" />
+		</td>
+		<td>
+			@Html.ActionLink("Register", "register", "AllLogins")
+		</td>
+	</tr>
+</table>
+}
+
